@@ -56,14 +56,14 @@ animations = [{
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_oebti"]
 
-[node name="Coin" type="Area2D"]
+[node name="Area2D" type="Area2D" groups=["coins"]]
 script = ExtResource("1_xxowj")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_15ygc")
 autoplay = "default"
-frame_progress = 0.0296618
+frame_progress = 0.827995
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(4.75, 4.75)
