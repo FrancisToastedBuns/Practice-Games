@@ -1,17 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://ddn64cnrmuchs"]
+[gd_scene load_steps=5 format=3 uid="uid://dne4ewhohup7v"]
 
-[ext_resource type="Script" uid="uid://vhdj2ugllrpv" path="res://main.gd" id="1_ig7tw"]
-[ext_resource type="PackedScene" uid="uid://dsrchey8ey7my" path="res://Hud.tscn" id="2_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://c423rivg4yusw" path="res://grass.png" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://dnnknxyrwqxi2" path="res://main.gd" id="1_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://bmjr3osqpot4y" path="res://player/Player.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://b6g0l6rwyu8hd" path="res://coin/coin.tscn" id="2_lquwl"]
 
-[node name="Main" type="Node2D"]
-script = ExtResource("1_ig7tw")
+[node name="main" type="Node"]
+script = ExtResource("1_1bvp3")
+coin_scene = ExtResource("2_lquwl")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 64.0
+offset_bottom = 64.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("1_0xm2m")
 stretch_mode = 1
 
-[node name="Hud" parent="." instance=ExtResource("2_0xm2m")]
+[node name="Player" parent="." instance=ExtResource("2_h2yge")]
+position = Vector2(207, 153)
+
+[node name="GameTimer" type="Timer" parent="."]
