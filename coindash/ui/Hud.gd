@@ -15,7 +15,6 @@ func _on_timer_timeout():
 
 
 func _on_start_button_pressed() -> void:
-	print("hello")
 	$StartButton.hide()
 	$Message.hide()
 	start_game.emit()

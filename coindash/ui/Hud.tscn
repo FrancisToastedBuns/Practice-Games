@@ -51,6 +51,8 @@ text = "Score: 0"
 vertical_alignment = 1
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
 
 [node name="StartButton" type="Button" parent="."]
 anchors_preset = 7

@@ -1,21 +1,26 @@
-[gd_scene load_steps=6 format=3 uid="uid://dne4ewhohup7v"]
+[gd_scene load_steps=12 format=3 uid="uid://dne4ewhohup7v"]
 
 [ext_resource type="Texture2D" uid="uid://c423rivg4yusw" path="res://grass.png" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://dnnknxyrwqxi2" path="res://main.gd" id="1_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://bmjr3osqpot4y" path="res://player/Player.tscn" id="2_h2yge"]
 [ext_resource type="PackedScene" uid="uid://b6g0l6rwyu8hd" path="res://coin/coin.tscn" id="2_lquwl"]
+[ext_resource type="PackedScene" uid="uid://dgm7deuxmsklh" path="res://pow/powerup.tscn" id="3_kek77"]
 [ext_resource type="PackedScene" uid="uid://bhcuo1f8ti2ll" path="res://ui/Hud.tscn" id="5_lquwl"]
+[ext_resource type="AudioStream" uid="uid://cu2mfc81ekl3b" path="res://audio/Coin.wav" id="6_5vw27"]
+[ext_resource type="AudioStream" uid="uid://d3br13mnrlxmt" path="res://audio/Level.wav" id="7_kek77"]
+[ext_resource type="AudioStream" uid="uid://b1ogpa8br30wa" path="res://audio/EndSound.wav" id="8_4c57u"]
+[ext_resource type="AudioStream" uid="uid://vysqlljdovtp" path="res://audio/Powerup.wav" id="10_4c57u"]
+[ext_resource type="PackedScene" uid="uid://jmk6hpx2di5d" path="res://obstacle/obstacle.tscn" id="11_efxa6"]
 
 [node name="main" type="Node"]
 script = ExtResource("1_1bvp3")
 coin_scene = ExtResource("2_lquwl")
+powerup_scene = ExtResource("3_kek77")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 64.0
-offset_bottom = 64.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_0xm2m")
@@ -28,7 +33,45 @@ position = Vector2(207, 153)
 
 [node name="Hud" parent="." instance=ExtResource("5_lquwl")]
 
+[node name="PowerupTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="CoinSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_5vw27")
+
+[node name="LevelSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_kek77")
+
+[node name="EndSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_4c57u")
+
+[node name="PowerupSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_4c57u")
+
+[node name="Area2D" parent="." instance=ExtResource("11_efxa6")]
+position = Vector2(260, 730)
+
+[node name="Area2D2" parent="." instance=ExtResource("11_efxa6")]
+position = Vector2(731, 304)
+
+[node name="Area2D3" parent="." instance=ExtResource("11_efxa6")]
+position = Vector2(1097, 676)
+
+[node name="Area2D4" parent="." instance=ExtResource("11_efxa6")]
+position = Vector2(6301, -27)
+
+[node name="Area2D5" parent="." instance=ExtResource("11_efxa6")]
+position = Vector2(1632, 311)
+
+[node name="Area2D6" parent="." instance=ExtResource("11_efxa6")]
+position = Vector2(1632, 729)
+
+[node name="Area2D7" parent="." instance=ExtResource("11_efxa6")]
+position = Vector2(618, 905)
+
 [connection signal="hurt" from="Player" to="." method="_on_player_hurt"]
 [connection signal="pickup" from="Player" to="." method="_on_player_pickup"]
 [connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
 [connection signal="start_game" from="Hud" to="." method="_on_hud_start_game"]
+[connection signal="timeout" from="PowerupTimer" to="." method="_on_powerup_timer_timeout"]
