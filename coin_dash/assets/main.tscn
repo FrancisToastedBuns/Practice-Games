@@ -1,0 +1,57 @@
+[gd_scene load_steps=11 format=3 uid="uid://cn6d0jir5ej1f"]
+
+[ext_resource type="Script" uid="uid://bjlcf0ro35f0q" path="res://assets/main.gd" id="1_fphxj"]
+[ext_resource type="Texture2D" uid="uid://6ixshqtk2ep1" path="res://assets/grass.png" id="1_qdlv5"]
+[ext_resource type="PackedScene" uid="uid://clsymohhthna2" path="res://assets/player/player.tscn" id="2_tkxyu"]
+[ext_resource type="PackedScene" uid="uid://dtuu5b16ki5hl" path="res://assets/coin/coin.tscn" id="2_vqaxa"]
+[ext_resource type="AudioStream" uid="uid://bjmrrk77pt0qq" path="res://assets/audio/Coin.wav" id="3_fphxj"]
+[ext_resource type="AudioStream" uid="uid://d1k1a8gjpxu86" path="res://assets/audio/EndSound.wav" id="4_vqaxa"]
+[ext_resource type="AudioStream" uid="uid://diccgulantqws" path="res://assets/audio/Hit.wav" id="5_m5usj"]
+[ext_resource type="AudioStream" uid="uid://bargk63phvyaf" path="res://assets/audio/Level.wav" id="6_otm8r"]
+[ext_resource type="PackedScene" uid="uid://djxcbjljobnro" path="res://assets/obstacle/obstacle.tscn" id="7_h4xlo"]
+[ext_resource type="PackedScene" uid="uid://din5vordeg6xb" path="res://assets/ui/hud.tscn" id="8_tkxyu"]
+
+[node name="main" type="Node"]
+script = ExtResource("1_fphxj")
+coinScene = ExtResource("2_vqaxa")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_qdlv5")
+stretch_mode = 1
+
+[node name="Player" parent="." instance=ExtResource("2_tkxyu")]
+position = Vector2(783, 545)
+
+[node name="CoinSounds" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_fphxj")
+
+[node name="EndSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_vqaxa")
+
+[node name="HitSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_m5usj")
+
+[node name="LevelSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_otm8r")
+
+[node name="Area2D" parent="." instance=ExtResource("7_h4xlo")]
+position = Vector2(413, 310)
+
+[node name="Area2D2" parent="." instance=ExtResource("7_h4xlo")]
+position = Vector2(591, 810)
+
+[node name="Area2D3" parent="." instance=ExtResource("7_h4xlo")]
+position = Vector2(1459, 294)
+
+[node name="Area2D4" parent="." instance=ExtResource("7_h4xlo")]
+position = Vector2(1740, 802)
+
+[node name="Area2D5" parent="." instance=ExtResource("7_h4xlo")]
+position = Vector2(1039, 538)
+
+[node name="CanvasLayer" parent="." instance=ExtResource("8_tkxyu")]

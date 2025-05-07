@@ -1,0 +1,63 @@
+[gd_scene load_steps=14 format=3 uid="uid://lsh0q0besll7"]
+
+[ext_resource type="Script" uid="uid://cp2rwpcx8t0jd" path="res://assets/pow/powerup.gd" id="1_we0fc"]
+[ext_resource type="Texture2D" uid="uid://bsuj1yiy10d0a" path="res://assets/pow/pow-frame-1.png" id="2_we0fc"]
+[ext_resource type="Texture2D" uid="uid://dmlp27dd6m6xi" path="res://assets/pow/pow-frame-2.png" id="3_0amu1"]
+[ext_resource type="Texture2D" uid="uid://b70ypuw2afbh" path="res://assets/pow/pow-frame-3.png" id="4_28pp3"]
+[ext_resource type="Texture2D" uid="uid://dlnrg2wku1hsk" path="res://assets/pow/pow-frame-4.png" id="5_5blpd"]
+[ext_resource type="Texture2D" uid="uid://dyyi5nta7dyva" path="res://assets/pow/pow-frame-5.png" id="6_4qpbo"]
+[ext_resource type="Texture2D" uid="uid://bgovmip7qmamr" path="res://assets/pow/pow-frame-6.png" id="7_veujo"]
+[ext_resource type="Texture2D" uid="uid://cbkvn5alrf5w3" path="res://assets/pow/pow-frame-7.png" id="8_iyqy0"]
+[ext_resource type="Texture2D" uid="uid://rymfp8vy2h16" path="res://assets/pow/pow-frame-8.png" id="9_cqgb4"]
+[ext_resource type="Texture2D" uid="uid://chqgfp7ux3fww" path="res://assets/pow/pow-frame-9.png" id="10_lxdb7"]
+[ext_resource type="Texture2D" uid="uid://b0t3wblctsowf" path="res://assets/pow/pow-frame-10.png" id="11_pnmq8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ba1ih"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_we0fc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0amu1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_28pp3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_5blpd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_4qpbo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_veujo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_iyqy0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_cqgb4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_lxdb7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_pnmq8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p585y"]
+
+[node name="coin" type="Area2D"]
+script = ExtResource("1_we0fc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ba1ih")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(4.845, 4.845)
+shape = SubResource("CircleShape2D_p585y")
