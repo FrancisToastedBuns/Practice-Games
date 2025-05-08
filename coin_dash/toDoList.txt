@@ -6,4 +6,5 @@
 
 -powerup increase time
 
--
+problem seems to extend from the fact that screen goes outside of bounds
+debug - get the vewport of the game to check how to solve the problem of the player going out of bounds from the game

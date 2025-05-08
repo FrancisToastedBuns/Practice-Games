@@ -1,6 +1,6 @@
 extends Area2D
 @export var speed = 600
-var screensize = Vector2.ZERO
+var screensize = Vector2(1920, 1080)
 signal pick_up
 func _process(delta):
 	var input_direction = Input.get_vector("left", "right", "up", "down")
@@ -14,7 +14,10 @@ func _process(delta):
 		$AnimatedSprite2D.play("run")
 	else:
 		$AnimatedSprite2D.play("idle")
+	
 	position += input_direction * speed * delta
+	position.x = clamp(position.x, 0,  screensize.x)
+	position.y = clamp(position.y, 0,  screensize.y)
 	
 
 

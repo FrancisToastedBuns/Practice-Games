@@ -53,7 +53,6 @@ position = Vector2(1459, 294)
 position = Vector2(1740, 802)
 
 [node name="Area2D5" parent="." instance=ExtResource("7_h4xlo")]
-visible = false
 position = Vector2(1039, 538)
 
 [node name="CanvasLayer" parent="." instance=ExtResource("8_tkxyu")]
