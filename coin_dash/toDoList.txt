@@ -1,0 +1,9 @@
+-hud should have basic timer and score
+
+-start game should start
+
+-new game when death
+
+-powerup increase time
+
+-

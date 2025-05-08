@@ -52,7 +52,7 @@ animations = [{
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p585y"]
 
-[node name="coin" type="Area2D"]
+[node name="powerup" type="Area2D" groups=["powerups"]]
 script = ExtResource("1_we0fc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
