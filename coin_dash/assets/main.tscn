@@ -60,4 +60,5 @@ position = Vector2(1039, 538)
 [node name="powerup" parent="." instance=ExtResource("1_06ig3")]
 
 [connection signal="pick_up" from="Player" to="." method="_on_player_pick_up"]
+[connection signal="game_over" from="hud" to="." method="_on_hud_game_over"]
 [connection signal="new_game" from="hud" to="." method="_on_hud_new_game"]

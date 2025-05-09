@@ -28,6 +28,11 @@ func _on_area_entered(area: Area2D) -> void:
 	elif area.is_in_group("obstacles"):
 		set_process(false)
 		$AnimatedSprite2D.play("die")
+		pick_up.emit("obstacles")
+		await get_tree().create_timer(2).timeout
+		position = Vector2(783, 545)
+		set_process(true)
+		$AnimatedSprite2D.play("idle")
 	elif area.is_in_group("powerups"):
 		area.pick_up()
 		pick_up.emit("powerups")
