@@ -60,3 +60,11 @@ offset_bottom = 985.0
 theme_override_fonts/font = ExtResource("1_jfksi")
 theme_override_font_sizes/font_size = 48
 text = "Start"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 6.499
+one_shot = true
+autostart = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
