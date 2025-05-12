@@ -11,7 +11,8 @@ config_version=5
 [application]
 
 config/name="Space Rocks"
-run/main_scene="uid://bxmrxgt33bsed"
+config/tags=PackedStringArray("made")
+run/main_scene="uid://cymcv8m0655fh"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
