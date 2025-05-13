@@ -14,6 +14,7 @@ var can_shoot = true
 func _ready():
 	change_state(ALIVE)
 	screensize = get_viewport_rect().size
+
 func change_state(new_state):
 	match new_state:
 		INIT:
@@ -38,6 +39,7 @@ func get_input():
 	rotation_dir = Input.get_axis("rotate_left", "rotate_right")
 	if Input.is_action_pressed("shoot") and can_shoot:
 		shoot()
+		
 func shoot():
 	if state == INVULNERABLE:
 		return
@@ -46,8 +48,10 @@ func shoot():
 	var b = bullet_scene.instantiate()
 	get_tree().root.add_child(b)
 	b.start($Muzzle.global_transform)
+	
 func _on_gun_cooldown_timeout():
 	can_shoot = true
+	
 func _physics_process(delta):
 	constant_force = thrust
 	constant_torque = rotation_dir * spin_power
