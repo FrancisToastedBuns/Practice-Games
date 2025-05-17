@@ -15,6 +15,7 @@
 [node name="main" type="Node"]
 script = ExtResource("1_fphxj")
 coinScene = ExtResource("2_vqaxa")
+powerupScene = ExtResource("1_06ig3")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 15
@@ -57,8 +58,9 @@ position = Vector2(1039, 538)
 
 [node name="hud" parent="." instance=ExtResource("8_tkxyu")]
 
-[node name="powerup" parent="." instance=ExtResource("1_06ig3")]
+[node name="powerupTimer" type="Timer" parent="."]
 
 [connection signal="pick_up" from="Player" to="." method="_on_player_pick_up"]
 [connection signal="game_over" from="hud" to="." method="_on_hud_game_over"]
 [connection signal="new_game" from="hud" to="." method="_on_hud_new_game"]
+[connection signal="timeout" from="powerupTimer" to="." method="_on_powerup_timer_timeout"]

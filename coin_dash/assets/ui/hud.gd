@@ -2,7 +2,7 @@ extends CanvasLayer
 signal new_game
 signal game_over
 var player_score = 0
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	update_timer()
 	update_score()
 func _on_button_pressed() -> void:
