@@ -11,10 +11,10 @@ config_version=5
 [application]
 
 config/name="CoinDash"
+config/tags=PackedStringArray("made")
 run/main_scene="uid://dne4ewhohup7v"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
-config/tags=PackedStringArray("made")
 
 [display]
 

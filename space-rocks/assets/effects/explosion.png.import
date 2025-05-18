@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://de1g5xta7ti3h"
-path="res://.godot/imported/play_button_h.png-17f43b200945e173a238dcdf7d91963b.ctex"
+uid="uid://bfi6pjo5kr7cm"
+path="res://.godot/imported/explosion.png-78ee27d88bf13a9bb5229f0ca5d9b90a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/play_button_h.png"
-dest_files=["res://.godot/imported/play_button_h.png-17f43b200945e173a238dcdf7d91963b.ctex"]
+source_file="res://assets/effects/explosion.png"
+dest_files=["res://.godot/imported/explosion.png-78ee27d88bf13a9bb5229f0ca5d9b90a.ctex"]
 
 [params]
 

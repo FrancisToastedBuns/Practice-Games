@@ -16,3 +16,4 @@ shape = SubResource("CircleShape2D_31m5v")
 texture = ExtResource("2_31m5v")
 
 [node name="Explosion" parent="." instance=ExtResource("3_47cxy")]
+visible = false

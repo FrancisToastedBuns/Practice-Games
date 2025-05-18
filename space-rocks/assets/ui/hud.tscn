@@ -1,0 +1,80 @@
+[gd_scene load_steps=6 format=3 uid="uid://cq734v46lw8ob"]
+
+[ext_resource type="FontFile" uid="uid://cg8kr11cqrt5s" path="res://assets/fonts/kenvector_future_thin.ttf" id="1_o3rjo"]
+[ext_resource type="Script" uid="uid://cyd55sn3c0c1q" path="res://assets/ui/hud.gd" id="1_rvwde"]
+[ext_resource type="Texture2D" uid="uid://de8w1i6h36eun" path="res://assets/ui/player_small.png" id="2_c8cfg"]
+[ext_resource type="Texture2D" uid="uid://0usqikigov8o" path="res://assets/ui/play_button.png" id="3_1hjus"]
+[ext_resource type="Texture2D" uid="uid://de1g5xta7ti3h" path="res://assets/ui/play_button_h.png" id="4_rvwde"]
+
+[node name="Hud" type="CanvasLayer"]
+script = ExtResource("1_rvwde")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="ScoreLabel" type="Label" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_o3rjo")
+theme_override_font_sizes/font_size = 64
+text = "0"
+
+[node name="LivesCounter" type="HBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="L1" type="TextureRect" parent="MarginContainer/HBoxContainer/LivesCounter"]
+layout_mode = 2
+texture = ExtResource("2_c8cfg")
+stretch_mode = 5
+
+[node name="L2" type="TextureRect" parent="MarginContainer/HBoxContainer/LivesCounter"]
+layout_mode = 2
+texture = ExtResource("2_c8cfg")
+stretch_mode = 5
+
+[node name="L3" type="TextureRect" parent="MarginContainer/HBoxContainer/LivesCounter"]
+layout_mode = 2
+texture = ExtResource("2_c8cfg")
+stretch_mode = 5
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -245.0
+offset_top = -118.5
+offset_right = 245.0
+offset_bottom = 118.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 100
+
+[node name="Message" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_o3rjo")
+theme_override_font_sizes/font_size = 64
+text = "Space Rocks!"
+
+[node name="TextureButton" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("3_1hjus")
+texture_hover = ExtResource("4_rvwde")

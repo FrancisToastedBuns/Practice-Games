@@ -14,7 +14,7 @@ config/name="Space Rocks"
 config/tags=PackedStringArray("made")
 run/main_scene="uid://cymcv8m0655fh"
 config/features=PackedStringArray("4.4", "Mobile")
-config/icon="res://icon.svg"
+config/icon="uid://byjlamtq07vga"
 
 [display]
 

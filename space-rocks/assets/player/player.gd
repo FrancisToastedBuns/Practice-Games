@@ -10,7 +10,18 @@ var thrust = Vector2.ZERO
 var rotation_dir = 0
 var screensize = Vector2.ZERO
 var can_shoot = true
+signal lives_changed
+signal dead
+var reset_pos = false
+var lives = 0: set = set_lives
 
+func set_lives(value):
+	lives = value
+	lives_changed.emit(lives)
+	if lives <= 0:
+		change_state(DEAD)
+	else:
+		change_state(INVULNERABLE)
 func _ready():
 	change_state(ALIVE)
 	screensize = get_viewport_rect().size
@@ -19,15 +30,22 @@ func change_state(new_state):
 	match new_state:
 		INIT:
 			$CollisionShape2D.set_deferred("disabled", true)
+			$Sprite2D.modulate.a = 0.5
 		ALIVE:
-			$CollisionShape2D.set_deferred("disabled", false)
+			$CollisionShape2d.set_deferred("disabled", false)
+			$Sprite2d.modulate.a = 1.0
 		INVULNERABLE:
-			$CollisionShape2D.set_deferred("disabled", true)
+			$CollisionShape2d.set_deferred("disabled", true)
+			$Sprite2d.modulate.a = 0.5
+			$InvulnerabilityTimer.start()
 		DEAD:
-			$CollisionShape2D.set_deferred("disabled", true)
+			$CollisionShape2d.set_deferred("disabled", true)
+			$Sprite2d.hide()
+			linear_velocity = Vector2.ZERO
+			dead.emit()
 	state = new_state
 
-func _process(delta):
+func _process(_delta):
 	get_input()
 
 func get_input():
@@ -52,7 +70,7 @@ func shoot():
 func _on_gun_cooldown_timeout():
 	can_shoot = true
 	
-func _physics_process(delta):
+func _physics_process(_delta):
 	constant_force = thrust
 	constant_torque = rotation_dir * spin_power
 
@@ -61,3 +79,6 @@ func _integrate_forces(physics_state):
 	xform.origin.x = wrapf(xform.origin.x, 0, screensize.x)
 	xform.origin.y = wrapf(xform.origin.y, 0, screensize.y)
 	physics_state.transform = xform
+
+func _on_invulnerability_timer_timeout():
+	change_state(ALIVE)
