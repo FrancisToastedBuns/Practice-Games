@@ -13,15 +13,6 @@ var bar_textures = {
 	"yellow": preload("res://assets/images/bar_yellow_200.png"),
 	"red": preload("res://assets/images/bar_red_200.png")
 }
-
-func update_shield(value):
-	shield_bar.texture_progress = bar_textures["green"]
-	if value < 0.4:
-		shield_bar.texture_progress = bar_textures["red"]
-	elif value < 0.7:
-		shield_bar.texture_progress = bar_textures["yellow"]
-	shield_bar.value = value
-	
 func show_message(text):
 	message.text = text
 	message.show()
@@ -49,3 +40,13 @@ func _on_start_button_pressed():
 func _on_timer_timeout():
 	message.hide()
 	message.text = ""
+
+
+
+func _on_player_shield_changed(value) -> void:
+	shield_bar.texture_progress = bar_textures["green"]
+	if value < 0.4:
+		shield_bar.texture_progress = bar_textures["red"]
+	elif value < 0.7:
+		shield_bar.texture_progress = bar_textures["yellow"]
+	shield_bar.value = value
