@@ -64,11 +64,13 @@ func get_input():
 	if state in [DEAD, INIT]:
 		return
 	if Input.is_action_pressed("thrust"):
+		$Exhaust.emitting = true
 		thrust = transform.x * engine_power
 		if not $EngineSounds.playing:
 			$EngineSounds.play()
 	else:
 		$EngineSounds.stop()
+		$Exhaust.emitting = false
 	rotation_dir = Input.get_axis("rotate_left", "rotate_right")
 	if Input.is_action_pressed("shoot") and can_shoot:
 		shoot()

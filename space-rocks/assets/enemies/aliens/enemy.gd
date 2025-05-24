@@ -5,13 +5,15 @@ extends Area2D
 @export var health = 3
 var follow = PathFollow2D.new()
 var target = null
-
+	
 func _ready():
+	$CPUParticles2D.emitting = true
 	$Sprite2D.frame = randi() % 3
 	var path = $EnemyPaths.get_children()[randi() % $EnemyPaths.get_child_count()]
 	path.add_child(follow)
 	follow.loop = false
 func _physics_process(delta):
+	$CPUParticles2D.emitting = true
 	rotation += deg_to_rad(rotation_speed) * delta
 	follow.progress += speed * delta
 	position = follow.global_position
