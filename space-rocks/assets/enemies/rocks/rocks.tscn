@@ -4,13 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://du2tg3ivq4nrv" path="res://assets/enemies/rocks/rock.png" id="2_31m5v"]
 [ext_resource type="PackedScene" uid="uid://d3nq32lttydet" path="res://assets/effects/explosion.tscn" id="3_47cxy"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_31m5v"]
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_47cxy"]
 
 [node name="Rocks" type="RigidBody2D" groups=["rocks"]]
+physics_material_override = SubResource("PhysicsMaterial_47cxy")
+linear_damp_mode = 1
+angular_damp_mode = 1
 script = ExtResource("1_41v1r")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["rocks"]]
-shape = SubResource("CircleShape2D_31m5v")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_31m5v")

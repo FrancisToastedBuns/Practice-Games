@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://beebfko0lf32"
-path="res://.godot/imported/enemy_saucer.png-a8c0802139777641fbeaf712b00df84c.ctex"
+path="res://.godot/imported/enemy_saucer.png-53c08445fc33d4d62cdeeeeedad3394a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/enemy_saucer.png"
-dest_files=["res://.godot/imported/enemy_saucer.png-a8c0802139777641fbeaf712b00df84c.ctex"]
+source_file="res://assets/enemies/aliens/enemy_saucer.png"
+dest_files=["res://.godot/imported/enemy_saucer.png-53c08445fc33d4d62cdeeeeedad3394a.ctex"]
 
 [params]
 

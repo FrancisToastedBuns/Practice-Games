@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://cymcv8m0655fh"]
+[gd_scene load_steps=8 format=3 uid="uid://cymcv8m0655fh"]
 
 [ext_resource type="PackedScene" uid="uid://bxmrxgt33bsed" path="res://assets/player/player.tscn" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://bieausdsnhdv0" path="res://main.gd" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://dl1evf756sa0l" path="res://assets/enemies/rocks/rocks.tscn" id="2_1bvp3"]
 [ext_resource type="Texture2D" uid="uid://c1sukia6s6faq" path="res://assets/images/space_background.png" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://bcjxyi8q57i4b" path="res://assets/enemies/aliens/enemy.tscn" id="3_7mycd"]
 [ext_resource type="PackedScene" uid="uid://cq734v46lw8ob" path="res://assets/ui/hud.tscn" id="5_lquwl"]
 
 [sub_resource type="Curve2D" id="Curve2D_0xm2m"]
@@ -15,6 +16,7 @@ point_count = 5
 [node name="Main" type="Node"]
 script = ExtResource("1_h2yge")
 rock_scene = ExtResource("2_1bvp3")
+enemy_scene = ExtResource("3_7mycd")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 15
@@ -25,14 +27,21 @@ grow_vertical = 2
 texture = ExtResource("2_h2yge")
 
 [node name="Player" parent="." instance=ExtResource("1_0xm2m")]
+visible = false
 
 [node name="RockPath" type="Path2D" parent="."]
-position = Vector2(-18.2891, 5.56035)
-scale = Vector2(1.01807, 1.02748)
+position = Vector2(-18, 7)
 curve = SubResource("Curve2D_0xm2m")
 
 [node name="RockSpawn" type="PathFollow2D" parent="RockPath"]
 position = Vector2(16, 16)
 rotation = 0.0010661
 
-[node name="Hud" parent="." instance=ExtResource("5_lquwl")]
+[node name="HUD" parent="." instance=ExtResource("5_lquwl")]
+
+[node name="EnemyTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="lives_changed" from="Player" to="HUD" method="update_lives"]
+[connection signal="start_game" from="HUD" to="." method="new_game"]
+[connection signal="timeout" from="EnemyTimer" to="." method="_on_enemy_timer_timeout"]
