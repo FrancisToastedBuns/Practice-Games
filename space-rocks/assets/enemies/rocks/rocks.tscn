@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dl1evf756sa0l"]
+[gd_scene load_steps=6 format=3 uid="uid://dl1evf756sa0l"]
 
 [ext_resource type="Script" uid="uid://bdabfqffnle86" path="res://assets/enemies/rocks/rocks.gd" id="1_41v1r"]
 [ext_resource type="Texture2D" uid="uid://du2tg3ivq4nrv" path="res://assets/enemies/rocks/rock.png" id="2_31m5v"]
 [ext_resource type="PackedScene" uid="uid://d3nq32lttydet" path="res://assets/effects/explosion.tscn" id="3_47cxy"]
+[ext_resource type="AudioStream" uid="uid://ckckxicfxlddy" path="res://assets/sounds/explosion.wav" id="4_kndj1"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_47cxy"]
 
@@ -19,3 +20,6 @@ texture = ExtResource("2_31m5v")
 
 [node name="Explosion" parent="." instance=ExtResource("3_47cxy")]
 visible = false
+
+[node name="ExplosionSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_kndj1")

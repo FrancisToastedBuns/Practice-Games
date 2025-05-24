@@ -27,6 +27,7 @@ func _integrate_forces(physics_state):
 	physics_state.transform = xform
 
 func explode():
+	$ExplosionSound.play()
 	$CollisionShape2D.set_deferred("disabled", true)
 	$Sprite2D.hide()
 	$Explosion/AnimationPlayer.play("explosion")
@@ -36,3 +37,4 @@ func explode():
 	angular_velocity = 0
 	await $Explosion/AnimationPlayer.animation_finished
 	queue_free()
+	

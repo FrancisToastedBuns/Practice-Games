@@ -51,6 +51,7 @@ func change_state(new_state):
 			$CollisionShape2D.set_deferred("disabled", true)
 			$Sprite2D.hide()
 			linear_velocity = Vector2.ZERO
+			$EngineSounds.stop()
 			dead.emit()
 	state = new_state
 
@@ -64,10 +65,14 @@ func get_input():
 		return
 	if Input.is_action_pressed("thrust"):
 		thrust = transform.x * engine_power
+		if not $EngineSounds.playing:
+			$EngineSounds.play()
+	else:
+		$EngineSounds.stop()
 	rotation_dir = Input.get_axis("rotate_left", "rotate_right")
 	if Input.is_action_pressed("shoot") and can_shoot:
 		shoot()
-		
+
 func shoot():
 	if state == INVULNERABLE:
 		return
@@ -76,6 +81,7 @@ func shoot():
 	var b = bullet_scene.instantiate()
 	get_tree().root.add_child(b)
 	b.start($Muzzle.global_transform)
+	$LaserSound.play()
 	
 func _on_gun_cooldown_timeout():
 	can_shoot = true
@@ -111,7 +117,7 @@ func explode():
 	$Explosion/AnimationPlayer.play("explosion")
 	await $Explosion/AnimationPlayer.animation_finished
 	$Explosion.hide()
-
+	$ExplosionSound.play()
 func set_shield(value):
 	value = min(value, max_shield)
 	shield = value

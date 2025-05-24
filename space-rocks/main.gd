@@ -11,6 +11,8 @@ func _ready():
 	screensize = get_viewport().get_visible_rect().size
 	
 func _process(delta):
+	if not $Music.playing and playing:
+		$Music.play()
 	if not playing:
 		return
 	if get_tree().get_nodes_in_group("rocks").size() == 0:
@@ -48,6 +50,7 @@ func new_game():
 	playing = true
 
 func new_level():
+	$LevelUp.play()
 	level += 1
 	$HUD.show_message("Wave %s" % level)
 	$EnemyTimer.start(randf_range(5, 10))
