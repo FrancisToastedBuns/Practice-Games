@@ -11,11 +11,17 @@ config_version=5
 [application]
 
 config/name="Space Rocks"
+run/main_scene="uid://w3yvmvjwye7y"
 config/features=PackedStringArray("4.4")
 config/icon="res://player_ship_icon.png"
 
 [display]
 
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=3
+window/stretch/mode="canvas_items"
+window/stretch/aspect="keep_width"
 window/dpi/allow_hidpi=false
 
 [input]
