@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://cak2giq7pk56e"]
+
+[ext_resource type="Script" uid="uid://4xu0v8cfa324" path="res://assets/player/bullets/bullets.gd" id="1_3186w"]
+[ext_resource type="Texture2D" uid="uid://b07avsqptu20f" path="res://assets/player/bullets/laser.png" id="2_euuwv"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_131xc"]
+radius = 3.0
+height = 56.0
+
+[node name="Bullets" type="Area2D"]
+script = ExtResource("1_3186w")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_euuwv")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-0.5, 0)
+scale = Vector2(2.75, 0.3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_131xc")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

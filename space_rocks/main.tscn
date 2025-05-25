@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://j4b77fnnyvxj"]
+[gd_scene load_steps=8 format=3 uid="uid://j4b77fnnyvxj"]
 
 [ext_resource type="Script" uid="uid://cqp1iwi0py62x" path="res://main.gd" id="1_hwlrv"]
 [ext_resource type="AudioStream" uid="uid://dx8un04x32e0q" path="res://assets/sounds/engine.ogg" id="2_7mycd"]
 [ext_resource type="AudioStream" uid="uid://busvswxcmmqgv" path="res://assets/sounds/enemy_laser.wav" id="6_272bh"]
+[ext_resource type="PackedScene" uid="uid://canibliapsve0" path="res://assets/player/player.tscn" id="7_272bh"]
 [ext_resource type="AudioStream" uid="uid://ckckxicfxlddy" path="res://assets/sounds/explosion.wav" id="7_co08d"]
 [ext_resource type="AudioStream" uid="uid://q7hmfuheyie6" path="res://assets/sounds/levelup.ogg" id="8_nv4bg"]
 [ext_resource type="AudioStream" uid="uid://1jfv7jitycu6" path="res://assets/sounds/Funky-Gameplay_Looping.ogg" id="9_6ablf"]
@@ -27,3 +28,6 @@ stream = ExtResource("7_co08d")
 
 [node name="EnemyBulletSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_272bh")
+
+[node name="Player" parent="." instance=ExtResource("7_272bh")]
+position = Vector2(787, 415)
