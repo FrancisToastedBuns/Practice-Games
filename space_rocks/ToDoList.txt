@@ -1,0 +1,19 @@
+PLayer
+	movement
+	bullets
+	
+ui
+	lives
+	shield
+	score
+
+enemies
+	particles
+	bullets
+	movement
+
+rocks
+	explosion
+	fuck bruh
+
+	
