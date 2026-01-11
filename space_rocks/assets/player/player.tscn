@@ -21,21 +21,24 @@ script = ExtResource("1_v2miy")
 Bullet = ExtResource("2_d5dr7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5756661
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_ouxva")
 
 [node name="Explosion" parent="." instance=ExtResource("3_d5dr7")]
 position = Vector2(1, -1)
+rotation = 1.5756661
 scale = Vector2(0.4, 0.4)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 0)
+rotation = 1.5756661
 shape = SubResource("RectangleShape2D_toylo")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 show_behind_parent = true
-position = Vector2(0, 21)
-rotation = 1.5708
+position = Vector2(-25, 1.9999981)
+rotation = 3.146466
 amount = 25
 lifetime = 0.5
 local_coords = true
@@ -52,5 +55,5 @@ scale_amount_curve = SubResource("Curve_v2miy")
 color_initial_ramp = SubResource("Gradient_ouxva")
 
 [node name="Muzzle" type="Marker2D" parent="."]
-position = Vector2(0, -27)
-rotation = -1.5708
+position = Vector2(27.000004, 5.722046e-06)
+rotation = 0.004866123
