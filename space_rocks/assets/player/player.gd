@@ -29,9 +29,8 @@ func _process(_delta: float) -> void:
 			can_shoot = true
 func shoot():
 	var b = Bullet.instantiate()
-	add_child(b)
-	b.transform = $Muzzle.transform
-
+	get_tree().root.add_child(b)
+	b.start($Muzzle.global_transform)
 func _integrate_forces(physics_state):
 	if reset_pos:
 		physics_state.transform.origin = screensize / 2

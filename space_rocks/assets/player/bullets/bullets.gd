@@ -18,3 +18,6 @@ func _on_body_entered(body: Node2D) -> void:
 func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("enemy"):
 		area.queue_free()
+
+func start(_transform):
+	transform = _transform
