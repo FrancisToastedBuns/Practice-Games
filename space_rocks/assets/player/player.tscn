@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://canibliapsve0"]
+[gd_scene load_steps=10 format=3 uid="uid://canibliapsve0"]
 
 [ext_resource type="Script" uid="uid://dqror8vy5cbfc" path="res://assets/player/player.gd" id="1_v2miy"]
 [ext_resource type="PackedScene" uid="uid://cak2giq7pk56e" path="res://assets/player/bullets/bullets.tscn" id="2_d5dr7"]
 [ext_resource type="Texture2D" uid="uid://byjlamtq07vga" path="res://assets/player/player_ship.png" id="2_ouxva"]
 [ext_resource type="PackedScene" uid="uid://dc4ne8vklxaej" path="res://assets/effects/explosion.tscn" id="3_d5dr7"]
+[ext_resource type="AudioStream" uid="uid://q7hmfuheyie6" path="res://assets/sounds/levelup.ogg" id="5_d5dr7"]
+[ext_resource type="AudioStream" uid="uid://ckckxicfxlddy" path="res://assets/sounds/explosion.wav" id="6_toylo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_toylo"]
 size = Vector2(55, 54)
@@ -57,3 +59,9 @@ color_initial_ramp = SubResource("Gradient_ouxva")
 [node name="Muzzle" type="Marker2D" parent="."]
 position = Vector2(27.000004, 5.722046e-06)
 rotation = 0.004866123
+
+[node name="BulletSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_d5dr7")
+
+[node name="ExplosionSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_toylo")

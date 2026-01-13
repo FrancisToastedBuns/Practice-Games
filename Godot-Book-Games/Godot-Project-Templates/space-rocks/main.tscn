@@ -37,7 +37,7 @@ curve = SubResource("Curve2D_0xm2m")
 
 [node name="RockSpawn" type="PathFollow2D" parent="RockPath"]
 position = Vector2(16, 16)
-rotation = 0.0010661
+rotation = 0.0010660978
 
 [node name="HUD" parent="." instance=ExtResource("5_lquwl")]
 
