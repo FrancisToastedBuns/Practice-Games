@@ -13,6 +13,7 @@
 script = ExtResource("1_dgtcr")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
+visible = false
 anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 85.0
@@ -90,8 +91,10 @@ theme_override_fonts/font = ExtResource("1_frajv")
 theme_override_font_sizes/font_size = 80
 text = "Space Rocks"
 
-[node name="TextureButton" type="TextureButton" parent="VBoxContainer"]
+[node name="StartButton" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 texture_normal = ExtResource("6_nt8ln")
 texture_hover = ExtResource("7_h353u")
+
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]

@@ -46,3 +46,5 @@ metadata/_edit_use_anchors_ = true
 [node name="Player" parent="." instance=ExtResource("7_272bh")]
 position = Vector2(496, 350)
 explosion_sound = SubResource("AtlasTexture_kek77")
+
+[connection signal="start" from="Hud" to="." method="_on_hud_start"]
