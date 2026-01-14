@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccu727xjtonl2"
-path="res://.godot/imported/corona.png-0d864ff185c27162e530fe744dfcfb59.ctex"
+uid="uid://bqk627y6jcktm"
+path="res://.godot/imported/bar_yellow_200.png-18f64de063ef240aae79a6ef577f2a24.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/corona.png"
-dest_files=["res://.godot/imported/corona.png-0d864ff185c27162e530fe744dfcfb59.ctex"]
+source_file="res://assets/ui/bar_yellow_200.png"
+dest_files=["res://.godot/imported/bar_yellow_200.png-18f64de063ef240aae79a6ef577f2a24.ctex"]
 
 [params]
 

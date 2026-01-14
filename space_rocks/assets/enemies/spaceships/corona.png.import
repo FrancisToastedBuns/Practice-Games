@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dlewrp3bu068b"
-path="res://.godot/imported/bar_red_200.png-3d70a5ff9a73940bdb5c3104934766f7.ctex"
+uid="uid://ccu727xjtonl2"
+path="res://.godot/imported/corona.png-abd2e322c7c3c1baa055d8de81656fcf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/bar_red_200.png"
-dest_files=["res://.godot/imported/bar_red_200.png-3d70a5ff9a73940bdb5c3104934766f7.ctex"]
+source_file="res://assets/enemies/spaceships/corona.png"
+dest_files=["res://.godot/imported/corona.png-abd2e322c7c3c1baa055d8de81656fcf.ctex"]
 
 [params]
 

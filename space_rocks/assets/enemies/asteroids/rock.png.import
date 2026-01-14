@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2pfyfolexacl"
-path="res://.godot/imported/player_ship_icon.png-0cc1e651cc9833013b16fef490066863.ctex"
+uid="uid://du2tg3ivq4nrv"
+path="res://.godot/imported/rock.png-cf5e35a4e5e014ef278ecdb11e700887.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player_ship_icon.png"
-dest_files=["res://.godot/imported/player_ship_icon.png-0cc1e651cc9833013b16fef490066863.ctex"]
+source_file="res://assets/enemies/asteroids/rock.png"
+dest_files=["res://.godot/imported/rock.png-cf5e35a4e5e014ef278ecdb11e700887.ctex"]
 
 [params]
 

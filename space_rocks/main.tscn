@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://canibliapsve0" path="res://assets/player/player.tscn" id="7_272bh"]
 [ext_resource type="PackedScene" uid="uid://w3yvmvjwye7y" path="res://assets/ui/HUD.tscn" id="7_kek77"]
 [ext_resource type="AudioStream" uid="uid://q7hmfuheyie6" path="res://assets/sounds/levelup.ogg" id="8_nv4bg"]
-[ext_resource type="Texture2D" uid="uid://c1sukia6s6faq" path="res://assets/space_background.png" id="9_4c57u"]
+[ext_resource type="Texture2D" uid="uid://c1sukia6s6faq" path="res://assets/ui/space_background.png" id="9_4c57u"]
 [ext_resource type="AudioStream" uid="uid://1jfv7jitycu6" path="res://assets/sounds/Funky-Gameplay_Looping.ogg" id="9_6ablf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kek77"]
