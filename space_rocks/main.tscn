@@ -34,16 +34,17 @@ anchor_left = -0.46
 anchor_top = -0.27142859
 anchor_right = 1.46
 anchor_bottom = 1.2714286
-offset_left = -2.0
-offset_top = 18.000015
-offset_right = -2.0
-offset_bottom = 18.0
+offset_left = -20.0
+offset_top = 55.000015
+offset_right = -20.0
+offset_bottom = 55.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("9_4c57u")
 metadata/_edit_use_anchors_ = true
 
 [node name="Player" parent="." instance=ExtResource("7_272bh")]
+visible = false
 position = Vector2(496, 350)
 explosion_sound = SubResource("AtlasTexture_kek77")
 

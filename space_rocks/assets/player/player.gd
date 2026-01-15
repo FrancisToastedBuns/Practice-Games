@@ -29,18 +29,23 @@ func _process(_delta: float) -> void:
 	get_input()
 	
 func get_input():
+	$CPUParticles2D.hide()
 	if player_state == DEAD:
 		return
 	thrust = Vector2.ZERO
 	spinning = Input.get_axis("rotate_left","rotate_right")
 	if Input.is_action_pressed("thrust"):
 		thrust = transform.x * engine_power
+		$CPUParticles2D.show()
 	if Input.is_action_pressed("shoot"):
 		if can_shoot:
 			shoot()
 			can_shoot = false
-			await get_tree().create_timer(0.3).timeout
+			await get_tree().create_timer(0.15).timeout
 			can_shoot = true
+
+func player_reset():
+	player_state = ALIVE
 func shoot():
 	var b = Bullet.instantiate()
 	get_tree().root.add_child(b)

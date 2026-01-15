@@ -12,4 +12,4 @@ func _ready() -> void:
 func _on_hud_start() -> void:
 	playing = true
 	$Player.show()
-	$Player.player_state = ALIVE
+	$Player.player_reset()
