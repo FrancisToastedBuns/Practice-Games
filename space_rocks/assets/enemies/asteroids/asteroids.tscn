@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0yufcgebkpx2"]
+
+[ext_resource type="Texture2D" uid="uid://du2tg3ivq4nrv" path="res://assets/enemies/asteroids/rock.png" id="1_ikd0j"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n0ebl"]
+radius = 107.52
+
+[node name="Asteroids" type="RigidBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.71530557, 0.70804685)
+shape = SubResource("CircleShape2D_n0ebl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ikd0j")
